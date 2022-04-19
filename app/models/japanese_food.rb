@@ -1,5 +1,6 @@
 class JapaneseFood < ActiveRecord::Base
     belongs_to :shop
-    belongs_to :order_food
-    belongs_to :order
+    has_many :order_foods
+
+    has_many :orders, through: order_foods
 end
